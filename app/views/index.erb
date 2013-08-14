@@ -6,6 +6,10 @@
     <input type="submit" value="Roll the Die">
   </form>
 
-  <div id="die">Your die will appear here!</div>
+  <div id="die">
+    <% if @roll %>
+      <img src="/<%= @roll.value %>.png" title="<%= @roll.value %>" alt="the roll">
+    <% end %>
+  </div>
 
 </div>

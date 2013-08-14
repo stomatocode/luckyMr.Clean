@@ -5,9 +5,10 @@ $(document).ready(function () {
 
     $.ajax({
       type: this.method,
-      url: this.action
+      url: this.action,
+      dataType: "json"
     }).done(function(badger_shit){
-      $('#die').replaceWith(badger_shit);
+      $('img').attr('src', '/' + badger_shit.roll + '.png');
     });
 
   });
