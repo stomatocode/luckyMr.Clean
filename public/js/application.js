@@ -1,5 +1,19 @@
 $(document).ready(function () {
 
+  $('form').on('submit', function(event){
+    event.preventDefault();
+
+    $.ajax({
+      type: this.method,
+      url: this.action
+    }).done(function(badger_shit){
+      $('#die').replaceWith(badger_shit);
+    });
+
+  });
+
+
+
   // PSEUDO-CODE:
   //   1- intercept the form submission event using jQuery
   //   2- prevent the default action for that event from happening
